@@ -1,0 +1,50 @@
+
+[35merror[39m | 10-02-2023 13:28:39 | LOGGER ACTIVO
+[35merror[39m | 10-02-2023 13:29:43 | LOGGER ACTIVO
+[35merror[39m | 10-02-2023 13:30:38 | LOGGER ACTIVO
+[35merror[39m | 10-02-2023 13:35:33 | Logger funcionando correctamente.
+[31mfatal[39m | 10-02-2023 13:35:33 | Logger funcionando correctamente.
+[35merror[39m | 10-02-2023 13:36:02 | Logger funcionando correctamente.
+[31mfatal[39m | 10-02-2023 13:36:02 | Logger funcionando correctamente.
+[35merror[39m | 10-02-2023 13:36:49 | Logger funcionando correctamente.
+[31mfatal[39m | 10-02-2023 13:36:49 | Logger funcionando correctamente.
+[35merror[39m | 10-02-2023 13:53:50 | Logger funcionando correctamente.
+[31mfatal[39m | 10-02-2023 13:53:50 | Logger funcionando correctamente.
+[31mfatal[39m | 10-02-2023 14:32:00 | User login failed
+[31mfatal[39m | 10-02-2023 14:33:39 | User login failed
+[31mfatal[39m | 10-02-2023 14:34:18 | User register failed
+[35merror[39m | 10-18-2023 11:14:39 | service is not defined
+[35merror[39m | 10-18-2023 11:15:05 | service is not defined
+[35merror[39m | 10-18-2023 11:15:22 | service is not defined
+[35merror[39m | 10-18-2023 11:16:14 | service is not defined
+[35merror[39m | 10-18-2023 11:16:19 | service is not defined
+[35merror[39m | 10-18-2023 11:16:39 | service is not defined
+[35merror[39m | 10-18-2023 11:19:22 | httpResponse is not defined
+[35merror[39m | 10-18-2023 11:19:54 | Cannot set headers after they are sent to the client
+[35merror[39m | 10-18-2023 11:33:09 | service is not defined
+[35merror[39m | 10-18-2023 11:39:33 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 10-18-2023 11:40:03 | service is not defined
+[35merror[39m | 10-18-2023 11:40:26 | products validation failed: status: Path `status` is required., category: Path `category` is required., stock: Path `stock` is required., code: Path `code` is required., price: Path `price` is required., description: Path `description` is required., title: Path `title` is required.
+[35merror[39m | 10-18-2023 11:51:44 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 10-18-2023 12:33:42 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 10-18-2023 13:05:10 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 10-18-2023 13:05:41 | Ya existe un producto con el mismo código
+[35merror[39m | 10-18-2023 13:09:53 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 10-18-2023 14:37:21 | cart validation failed: products.0.quantity: Path `quantity` is required., products.0.id: Path `id` is required.
+[35merror[39m | 10-18-2023 14:52:43 | cart validation failed: products.0.id: Cast to ObjectId failed for value "64c85327c6ajnb0b612953ef" (type string) at path "id" because of "BSONError"
+[35merror[39m | 10-18-2023 14:53:55 | cart validation failed: products.0.id: Cast to ObjectId failed for value "64c85327c6ajnb0b612953ef" (type string) at path "id" because of "BSONError"
+[35merror[39m | 10-18-2023 15:49:41 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 10-18-2023 15:52:44 | Cannot read properties of undefined (reading 'user')
+[31mfatal[39m | 10-18-2023 15:53:24 | User login failed
+[35merror[39m | 10-18-2023 15:56:44 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 11-20-2023 14:52:15 | Cannot read properties of undefined (reading 'service')
+[35merror[39m | 11-20-2023 14:52:31 | Cannot read properties of undefined (reading 'service')
+[35merror[39m | 11-20-2023 14:53:02 | Cannot read properties of undefined (reading 'service')
+[35merror[39m | 11-20-2023 14:53:43 | Cannot read properties of undefined (reading 'service')
+[35merror[39m | 11-20-2023 14:53:56 | Cannot read properties of undefined (reading 'service')
+[35merror[39m | 11-20-2023 14:56:09 | Cannot read properties of undefined (reading 'service')
+[35merror[39m | 11-20-2023 14:58:15 | Cannot read properties of undefined (reading 'service')
+[35merror[39m | 11-23-2023 17:47:04 | Cast to ObjectId failed for value "8878979" (type string) at path "_id" for model "users"
+[35merror[39m | 11-23-2023 17:49:56 | logger is not defined
+[35merror[39m | 11-23-2023 17:51:25 | role is not defined
+[35merror[39m | 11-24-2023 16:26:19 | Cannot read properties of undefined (reading 'email')

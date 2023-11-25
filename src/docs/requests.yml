@@ -1,0 +1,98 @@
+components:
+  parameters:
+    schemas:
+      Products:
+        type: object
+        required:
+          -title
+          -description
+          -price
+          -code
+          -stock
+          -category
+          -status
+        properties:
+            title:
+              type: string
+              description: Product name
+              example: Manzanas
+            description:
+              type: string
+              description: Product description
+              example: Manzanas frescas
+            price:
+              type: number
+              description: Product price
+              example: 100
+            code:
+              type: string
+              description: Product code
+              example: manz123
+            stock:
+              type: number
+              description: Product stock
+              example: 150
+            category:
+              type: string
+              description: Product category
+              example: Frutas
+            status: 
+              type: boolean
+              description: Product status
+              example: true
+      updateProduct:
+        type: object
+        required:
+          -title
+          -description
+          -price
+          -code
+          -stock
+          -category
+          -status
+        properties:
+            title:
+              type: string
+              description: Product name
+              example: Nombre de producto modificado
+            description:
+              type: string
+              description: Product description
+              example: Descripcion de producto modificado
+            price:
+              type: number
+              description: Product price
+              example: 9999
+            code:
+              type: string
+              description: Product code
+              example: manz-mod-code
+            stock:
+              type: number
+              description: Product stock
+              example: 9999
+            category:
+              type: string
+              description: Product category
+              example: Categoria de producto modificado
+            status: 
+              type: boolean
+              description: Product status
+              example: true
+      cartProducts:
+        type: array
+        items:
+          type: object
+          properties:
+            quantity:
+              type: number
+              example: 2
+            id:
+              type: string
+              example: 64c7cf33c469b3299bcd8299
+      quantity:
+        type: object
+        properties:
+          quantity:
+            type: number
+            example: 15

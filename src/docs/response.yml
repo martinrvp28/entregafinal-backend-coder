@@ -1,0 +1,126 @@
+components:
+  schemas:
+    Products:
+      getAllProducts:
+        type: array
+        items:
+          properties:
+            id:
+              type: string
+              description: Product ID
+            title:
+              type: string
+              description: Product name
+            description:
+              type: string
+              description: Product description
+            price:
+              type: number
+              description: Product price
+            code:
+              type: string
+              description: Product code
+            stock:
+              type: number
+              description: Product stock
+            category:
+              type: string
+              description: Product category
+            status: 
+              type: boolean
+              description: Product status
+      addNewProduct:
+        type: object
+        properties:
+          id:
+            type: string
+            description: Product ID
+          title:
+            type: string
+            description: Product name
+            example: Manzanas
+          description:
+            type: string
+            description: Product description
+            example: Manzanas frescas
+          price:
+            type: number
+            description: Product price
+            example: 100
+          code:
+            type: string
+            description: Product code
+            example: manz123
+          stock:
+            type: number
+            description: Product stock
+            example: 150
+          category:
+            type: string
+            description: Product category
+            example: Frutas
+          status: 
+            type: boolean
+            description: Product status
+            example: true
+      updateProduct:
+        type: object
+        items:
+          properties:
+            id:
+              type: string
+              description: Product ID
+            title:
+              type: string
+              description: Product name
+            description:
+              type: string
+              description: Product description
+            price:
+              type: number
+              description: Product price
+            code:
+              type: string
+              description: Product code
+            stock:
+              type: number
+              description: Product stock
+            category:
+              type: string
+              description: Product category
+            status: 
+              type: boolean
+              description: Product status
+      notFound:
+        type: object
+        properties:
+          status:
+            type: number
+            example: 404
+          message:
+            type: string
+          error:
+            type: string
+            example: Error 404 not found
+      internalServerError:
+        type: object
+        properties:
+          status:
+            type: number
+            example: 500
+          message:
+            type: string
+          error:
+            type: string
+            example: Internal Server ERROR
+      unauthorized:
+        type: object
+        properties:
+          status:
+            type: number
+            example: 401
+          message:
+            type: string
+          error:
+            type: string
+            example: You are not Administrator

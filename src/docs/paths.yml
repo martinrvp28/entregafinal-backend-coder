@@ -1,0 +1,259 @@
+paths:
+  /products:
+    get:
+      tags:
+        - Products
+      summary: Get all products
+      responses:
+        200:
+          description: List of all products
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/getAllProducts'
+        404:
+          description: Products not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/notFound'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/internalServerError'
+    post:
+      tags:
+        - Products
+      summary: Add a new product (Must be logged in first with an Admin Account)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/parameters/schemas/Products'
+        required: true
+      responses:
+        200:
+          description: Product has been added successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/addNewProduct'
+        401:
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/unauthorized'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/internalServerError'
+  /products/{id}:
+    delete:
+      tags:
+        - Products
+      summary: Remove a product (Must be logged in first with an Admin Account)
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Product ID
+          schema:
+            type: string
+      responses:
+        200:
+          description: Product has been removed successfully
+        401:
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/unauthorized'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/internalServerError'
+    put:
+      tags:
+        - Products
+      summary: Update a product by ID (must be logged in first with an Admin Account)
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Product ID
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/updateProduct"
+        required: true
+      responses:
+        200:
+          description: Product has been updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/addNewProduct'
+        401:
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/unauthorized'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/internalServerError'
+    get:
+      tags:
+        - Products
+      summary: Get a product by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Product ID
+          schema:
+            type: string
+      responses:
+        200:
+          description: Product found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/addNewProduct'
+  /carts:
+    post:
+      tags:
+        - Carts
+      summary: Create a new Cart
+      responses:
+        200:
+          description: Cart created succesfully
+  /carts/{id}:
+    get:
+      tags:
+        - Carts
+      summary: Get a Cart by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Cart ID
+          schema:
+            type: string
+      responses:
+        200:
+          description: Cart found
+    delete:
+      tags:
+        - Carts
+      summary: Empty a Cart by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Cart ID
+          schema:
+            type: string
+      responses:
+        200:
+          description: Cart is now Empty  
+    put:
+      tags:
+        - Carts
+      summary: Replace the products in the cart with other products that are sent by body
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Cart ID
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/cartProducts"
+        required: true
+      responses:
+        200:
+          description: Cart was updated succesfully 
+  /carts/{idCart}/products/{idProduct}:
+    post:
+      tags:
+        - Carts
+      summary: Add product to Cart. If the product already exists in the cart => product.quantity++
+      parameters:
+      - name: idCart
+        in: path
+        required: true
+        description: Cart ID
+        schema:
+          type: string
+      - name: idProduct
+        in: path
+        required: true
+        description: Product ID
+        schema:
+          type: string
+      responses:
+        200:
+          description: Product was added succesfully to Cart 
+    put:
+      tags:
+        - Carts
+      summary: Update the quantity of a product in the cart.
+      parameters:
+        - name: idCart
+          in: path
+          required: true
+          description: Cart ID
+          schema:
+            type: string
+        - name: idProduct
+          in: path
+          required: true
+          description: Product ID
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/quantity"
+        required: true
+      responses:
+        200:
+          description: Quantity was updated succesfully 
+    delete:
+      tags:
+        - Carts
+      summary: Remove a product from the cart.
+      parameters:
+        - name: idCart
+          in: path
+          required: true
+          description: Cart ID
+          schema:
+            type: string
+        - name: idProduct
+          in: path
+          required: true
+          description: Product ID
+          schema:
+            type: string
+      responses:
+        200:
+          description: The product was removed correctly
