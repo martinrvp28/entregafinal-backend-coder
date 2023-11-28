@@ -9,7 +9,7 @@ export const info = {
         },
         servers: [
             {
-                url: 'entregafinal-backend-coder-production.up.railway.app'
+                url: 'https://entregafinal-backend-coder-production.up.railway.app'
             }
     ]
     },
