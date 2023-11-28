@@ -415,3 +415,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Products/internalServerError'
+  /ticket/alltickets:
+    get:
+      tags: 
+      - Finish Purchase
+      summary: Get all tickets from de DB
+      responses:
+        200:
+          description: Order was finished successfully. 

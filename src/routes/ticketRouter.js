@@ -6,5 +6,6 @@ const controller = new TicketController();
 const router = Router();
 
 router.post('/', isAuth, controller.generateTicket);
+router.get('/alltickets', controller.tickets)
 
 export default router;
