@@ -3,12 +3,14 @@ import passport from "passport";
 import UserDao from "../persistence/daos/mongodb/user.dao.js";
 const userDao = new UserDao();
 
+import config from "../../config.js";
+
 import { logger } from "../utils/logger.js";
 
 const strategyOptions = {
     clientID:'Iv1.88a33aa53df23142',
     clientSecret:'4963fb931174a22b10da9e9d8875df734d56f428',
-    callbackURL:'http://localhost:8080/profile-github'
+    callbackURL:`http://${process.env.URL}/profile-github`
 };
 
 const registerOrLogin = async (accessToken, refreshToken, profile,done) => {

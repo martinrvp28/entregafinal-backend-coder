@@ -6,5 +6,6 @@ export default {
     SECRET_KEY_JWT :process.env.SECRET_KEY_JWT,
     NODE_ENV :process.env.NODE_ENV,
     EMAIL_ENV:process.env.EMAIL_ENV,
-    EPASSWORD:process.env.EPASSWORD
+    EPASSWORD:process.env.EPASSWORD,
+    URL:process.env.URL
 }
