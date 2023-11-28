@@ -1,4 +1,135 @@
 paths:
+  /register:
+    post:
+      tags:
+        - Authentication
+      summary: Register a new User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/register"
+        required: true
+      responses:
+        200:
+          description: New User registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegistrationResponse'
+        404:
+          description: User not found
+        500:
+          description: Internal server error
+  /login:
+    post:
+      tags:
+        - Authentication
+      summary: Login with email and password.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/login"
+        required: true
+      responses:
+        200:
+          description: User logged successfully
+        404:
+          description: User not found
+        500:
+          description: Internal server error
+  /logout:
+    get:
+      tags:
+      - Authentication
+      summary: Log out of the logged in user.
+      responses:
+        200:
+          description: User logged out successfully
+  /add/{idProd}/quantity/{quantity}:
+    post:
+      tags:
+        - Users
+      summary: Add a product with a determinate quantity to a User cart. (Must be logged in with an account)
+      parameters:
+        - in: path
+          name: idProd
+          required: true
+          description: Product ID
+          schema:
+            type: string
+        - in: path
+          name: quantity
+          required: true
+          description: Quantity to Add
+          schema:
+            type: number
+      responses:
+        200:
+          description: Product added successfully
+        404:
+          description: Product not found or User not logged
+        500:
+          description: Internal server error
+  /profile:
+    get:
+      tags:
+        - Users
+      summary: Shows the basic information of the logged in user
+      responses:
+        200:
+          description: Access granted
+        404:
+          description: Access not Authorized
+        500:
+          description: Internal server error
+  /users:
+    get:
+      tags:
+        - Users
+      summary: Shows basic information of all registered users
+      responses:
+        200:
+          description: Access granted
+        404:
+          description: Access not Authorized
+        500:
+          description: Internal server error
+    delete:
+      tags:
+        - Users
+      summary: Delete all users who have not had activity for 2 days
+      responses:
+        200:
+          description: Users deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersDeletionResponse'
+        404:
+          description: Access not Authorized
+        500:
+          description: Internal server error
+  /users/premium/{uid}:
+    post:
+      tags:
+        - Users
+      summary: Change a user's role from user to premium and back
+      parameters:
+        - in: path
+          name: uid
+          required: true
+          description: User ID
+          schema:
+            type: string
+      responses:
+        200:
+          description: Users role changed successfully
+        404:
+          description: User not found or its an Admin.
+        500:
+          description: Internal server error
   /products:
     get:
       tags:
@@ -26,7 +157,7 @@ paths:
     post:
       tags:
         - Products
-      summary: Add a new product (Must be logged in first with an Admin Account)
+      summary: Add a new product (Must be logged in first with an Admin or Premium Account)
       requestBody:
         content:
           application/json:
@@ -140,7 +271,7 @@ paths:
       summary: Create a new Cart
       responses:
         200:
-          description: Cart created succesfully
+          description: Cart created successfully
   /carts/{id}:
     get:
       tags:
@@ -189,7 +320,7 @@ paths:
         required: true
       responses:
         200:
-          description: Cart was updated succesfully 
+          description: Cart was updated successfully 
   /carts/{idCart}/products/{idProduct}:
     post:
       tags:
@@ -210,7 +341,7 @@ paths:
           type: string
       responses:
         200:
-          description: Product was added succesfully to Cart 
+          description: Product was added successfully to Cart 
     put:
       tags:
         - Carts
@@ -236,7 +367,7 @@ paths:
         required: true
       responses:
         200:
-          description: Quantity was updated succesfully 
+          description: Quantity was updated successfully 
     delete:
       tags:
         - Carts
@@ -257,3 +388,30 @@ paths:
       responses:
         200:
           description: The product was removed correctly
+  /carts/{idUser}/purchase:
+    post:
+      tags:
+        - Finish Purchase
+      summary: Finish the order. Check the stock of the products and compare them with those in the cart. Of those that there is enough stock, it accepts them in the purchase and reduces the stock in the database. Create a ticket with the purchase information and add it to the database. 
+      parameters:
+      - name: idUser
+        in: path
+        required: true
+        description: User ID
+        schema:
+          type: string
+      responses:
+        200:
+          description: Order was finished successfully. 
+        401:
+          description: 'Error: Unauthorized'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/unauthorized'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products/internalServerError'

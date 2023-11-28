@@ -15,7 +15,7 @@ const register = async (req, email, password, done) => {
     try {
         const user = await userDao.getByEmail(email);
         if (user) {
-            logger.fatal("User register failed");
+            logger.fatal("User register failed - Mail already registered");
             return done(null, false);
         } else {
             const newUser = await userDao.register(req.body);

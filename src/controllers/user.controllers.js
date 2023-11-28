@@ -102,9 +102,22 @@ export default class UserController extends Controllers {
                     const updatedUser = await this.service.changePremiumUser(uid,"usuario");
                     httpResponse.Ok(res, updatedUser); 
                 } else if (user.role === "admin") {
-                    httpResponse.Ok(res, "El usuario es Administrador. No puede cambiarse.");
+                    httpResponse.NotFound(res, "El usuario es Administrador. No puede cambiarse.");
                 }
             }
+
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    async deleteInactiveUsers(req,res,next){
+        try {
+
+            const users = await this.service.deleteInactiveUsers();
+
+            if (!users) return httpResponse.Ok(res, "No existen usuarios inactivos");
+            else httpResponse.Ok(res, `Cantidad de usuarios eliminados --> ${users.deletedCount}`);
 
         } catch (error) {
             next(error);

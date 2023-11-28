@@ -69,4 +69,16 @@ export default class UserService extends Services {
         }
     }
 
+    async deleteInactiveUsers() {
+
+        try {
+            const deletedUsers = await userDao.deleteInactiveUsers();
+            if (!deletedUsers) return false;
+            else return deletedUsers;
+        } catch (error) {
+            throw new Error(error.message);
+        }
+
+    }
+
 }

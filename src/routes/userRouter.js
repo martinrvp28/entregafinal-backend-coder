@@ -32,6 +32,8 @@ router.get('/profile', userSession, isAuth, profile);
 
 router.get('/users', userController.getAllUsersDTO.bind(userController));
 
+router.delete('/users', userController.deleteInactiveUsers.bind(userController));
+
 router.post('/users/premium/:uid', userController.changePremiumUser.bind(userController));
 
 

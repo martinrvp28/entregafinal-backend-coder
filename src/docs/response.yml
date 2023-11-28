@@ -1,5 +1,69 @@
 components:
   schemas:
+    UsersDeletionResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+          format: int32
+        message:
+          type: string
+        data:
+          type: string
+          example: Cantidad de usuarios eliminados -->
+    RegistrationResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+          format: int32
+        message:
+          type: string
+        data:
+          type: object
+          properties:
+            msg:
+              type: string
+            session:
+              type: object
+              properties:
+                cookie:
+                  type: object
+                  properties:
+                    originalMaxAge:
+                      type: integer
+                      format: int64
+                    expires:
+                      type: string
+                      format: date-time
+                    httpOnly:
+                      type: boolean
+                    path:
+                      type: string
+                passport:
+                  type: object
+                  properties:
+                    user:
+                      type: string
+    Users:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        age:
+          type: number
+        password:
+          type: string
+        role:
+          type: string
+        isGitHub:
+          type: boolean
+        last_connection:
+          type: Date
     Products:
       getAllProducts:
         type: array

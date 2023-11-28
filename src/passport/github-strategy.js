@@ -3,6 +3,8 @@ import passport from "passport";
 import UserDao from "../persistence/daos/mongodb/user.dao.js";
 const userDao = new UserDao();
 
+import { logger } from "../utils/logger.js";
+
 const strategyOptions = {
     clientID:'Iv1.88a33aa53df23142',
     clientSecret:'4963fb931174a22b10da9e9d8875df734d56f428',

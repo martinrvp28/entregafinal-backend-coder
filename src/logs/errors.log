@@ -48,3 +48,36 @@
 [35merror[39m | 11-23-2023 17:49:56 | logger is not defined
 [35merror[39m | 11-23-2023 17:51:25 | role is not defined
 [35merror[39m | 11-24-2023 16:26:19 | Cannot read properties of undefined (reading 'email')
+[31mfatal[39m | 11-27-2023 10:26:08 | User login failed
+[35merror[39m | 11-27-2023 10:50:35 | Unable to find the session to touch
+[35merror[39m | 11-27-2023 10:55:17 | Cannot read properties of undefined (reading 'email')
+[35merror[39m | 11-27-2023 10:56:08 | service is not defined
+[35merror[39m | 11-27-2023 10:56:14 | Cannot read properties of undefined (reading 'email')
+[35merror[39m | 11-27-2023 11:02:33 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 11-27-2023 11:04:46 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 11-27-2023 11:04:57 | Unable to find the session to touch
+[35merror[39m | 11-27-2023 11:07:32 | service is not defined
+[35merror[39m | 11-27-2023 11:07:56 | service is not defined
+[35merror[39m | 11-27-2023 11:10:55 | userInfo is not defined
+[35merror[39m | 11-27-2023 11:11:19 | Unable to find the session to touch
+[35merror[39m | 11-27-2023 11:13:03 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 11-27-2023 11:16:25 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 11-27-2023 11:18:24 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 11-27-2023 11:36:45 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 11-27-2023 11:36:49 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 11-27-2023 11:36:50 | Cannot read properties of undefined (reading 'user')
+[35merror[39m | 11-27-2023 11:41:04 | Unable to find the session to touch
+[35merror[39m | 11-27-2023 12:04:32 | deletedUsers is not defined
+[35merror[39m | 11-28-2023 09:37:47 | email is not defined
+[31mfatal[39m | 11-28-2023 09:49:52 | User register failed
+[35merror[39m | 11-28-2023 10:21:06 | Ya existe un producto con el mismo código
+[35merror[39m | 11-28-2023 12:30:35 | users validation failed: last_name: Path `last_name` is required., first_name: Path `first_name` is required.
+[31mfatal[39m | 11-28-2023 12:38:03 | User register failed - Mail already registered
+[35merror[39m | 11-28-2023 13:47:26 | logger is not defined
+[35merror[39m | 11-28-2023 13:47:33 | logger is not defined
+[35merror[39m | 11-28-2023 13:47:37 | logger is not defined
+[35merror[39m | 11-28-2023 13:48:55 | logger is not defined
+[35merror[39m | 11-28-2023 14:28:29 | Cast to ObjectId failed for value "4565" (type string) at path "_id" for model "users"
+[35merror[39m | 11-28-2023 14:38:33 | Logger funcionando correctamente.
+[31mfatal[39m | 11-28-2023 14:38:33 | Logger funcionando correctamente.
+[35merror[39m | 11-28-2023 14:59:15 | Failed to obtain access token

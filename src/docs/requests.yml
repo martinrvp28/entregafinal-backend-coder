@@ -58,7 +58,7 @@ components:
             description:
               type: string
               description: Product description
-              example: Descripcion de producto modificado
+              example: Descripción de producto modificado
             price:
               type: number
               description: Product price
@@ -74,7 +74,7 @@ components:
             category:
               type: string
               description: Product category
-              example: Categoria de producto modificado
+              example: Categoría de producto modificado
             status: 
               type: boolean
               description: Product status
@@ -96,3 +96,30 @@ components:
           quantity:
             type: number
             example: 15
+      register:
+        type: object
+        properties:
+          first_name:
+            type: string
+            example: Martin
+          last_name:
+            type: string
+            example: Test
+          email:
+            type: string
+            example: testmail@gmail.com
+          age:
+            type: number
+            example: 28
+          password:
+            type: string
+            example: testpassword
+      login:
+        type: object
+        properties:
+          email:
+            type: string
+            example: testmail@gmail.com
+          password:
+            type: string
+            example: testpassword

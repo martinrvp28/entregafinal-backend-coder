@@ -1,4 +1,5 @@
 import { logger } from "../../../utils/logger.js";
+import {sendGmailProduct} from "../../../controllers/email.controller.js"
 
 export default class MongoDao {
     constructor(model){
@@ -44,8 +45,17 @@ export default class MongoDao {
     }
 
     async delete(id) {
+
         try {
+
             const response = await this.model.findByIdAndDelete(id);
+
+            if (response) {
+                if ((response.owner) && (response.owner !== "admin")){
+                    await sendGmailProduct(response.owner, response.title);
+                }
+            }
+
             return response;
         } catch (error) {
             logger.error(error);
