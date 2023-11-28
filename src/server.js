@@ -68,33 +68,8 @@ app.use(json())
     app.use('/', mainRouter.getRouter());
     app.use(errorHandler);
 
-const PORT = config.PORT ;
+const PORT = config.PORT || 8080 ;
 
 const httpServer = app.listen(PORT, ()=> {
     logger.info(`Server running on port ${PORT}`)
-});
-
-const socketServer = new Server(httpServer);
-
-socketServer.on('connection', async (socket) => {
-
-
-    socket.emit('allProducts', await productManager.getProducts());
-
-    socket.on('disconnect', () =>{
-        logger.info(`Cliente Desconectado: ${socket.id}`)
-    })
-
-    socket.on('newProduct', async (prod) => {
-        const add = await productManager.addProduct(prod);
-        socketServer.emit('allProducts', await productManager.getProducts());
-    })
-
-    socket.on('deleteProd', async (id) => {
-
-        const del = await productManager.deleteProduct(id);
-        socketServer.emit('allProducts', await productManager.getProducts());
-    })
-
-
 });
