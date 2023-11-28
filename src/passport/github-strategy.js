@@ -10,7 +10,7 @@ import { logger } from "../utils/logger.js";
 const strategyOptions = {
     clientID:'Iv1.88a33aa53df23142',
     clientSecret:'4963fb931174a22b10da9e9d8875df734d56f428',
-    callbackURL:`http://${process.env.URL}/profile-github`
+    callbackURL:`https://entregafinal-backend-coder-production.up.railway.app/profile-github`
 };
 
 const registerOrLogin = async (accessToken, refreshToken, profile,done) => {
