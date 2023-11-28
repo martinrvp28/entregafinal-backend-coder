@@ -81,3 +81,15 @@
 [35merror[39m | 11-28-2023 14:38:33 | Logger funcionando correctamente.
 [31mfatal[39m | 11-28-2023 14:38:33 | Logger funcionando correctamente.
 [35merror[39m | 11-28-2023 14:59:15 | Failed to obtain access token
+[35merror[39m | 11-28-2023 17:40:33 | service is not defined
+[35merror[39m | 11-28-2023 17:40:39 | service is not defined
+[35merror[39m | 11-28-2023 17:40:42 | service is not defined
+[35merror[39m | 11-28-2023 17:40:47 | service is not defined
+[35merror[39m | 11-28-2023 17:42:13 | service is not defined
+[35merror[39m | 11-28-2023 17:42:26 | service is not defined
+[35merror[39m | 11-28-2023 17:42:27 | service is not defined
+[35merror[39m | 11-28-2023 17:42:31 | service is not defined
+[35merror[39m | 11-28-2023 17:42:56 | service is not defined
+[35merror[39m | 11-28-2023 17:45:31 | service is not defined
+[35merror[39m | 11-28-2023 17:45:31 | service is not defined
+[35merror[39m | 11-28-2023 17:45:52 | The redirect_uri MUST match the registered callback URL for this application.
